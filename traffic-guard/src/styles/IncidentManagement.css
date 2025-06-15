@@ -1,0 +1,101 @@
+/* Grid layout */
+.im-container {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  height: 100%;
+}
+
+/* Table section */
+.im-table {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Dashboard */
+.im-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* FiltersBar */
+.fb-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.fb-container input,
+.fb-container select {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+.fb-new {
+  margin-left: auto;
+  background: #1b3b1a; color: #fff;
+  border: none; padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+/* IncidentsTable */
+.it-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.it-table th,
+.it-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+.it-actions button {
+  background: none;
+  border: none;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+/* Badges */
+.badge-Active         { background: #ffcdd2; color: #b71c1c; padding: 0.25rem; border-radius: 0.25rem; }
+.badge-Acknowledged   { background: #fff9c4; color: #f57f17; padding: 0.25rem; border-radius: 0.25rem; }
+.badge-Resolved       { background: #c8e6c9; color: #1b5e20; padding: 0.25rem; border-radius: 0.25rem; }
+
+/* StatsCard */
+.sc-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+.sc-total {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+.sc-breakdown span {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* QuickActions */
+.qa2-container {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.qa2-container button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: none;
+  background: #1b3b1a;
+  color: #fff;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}

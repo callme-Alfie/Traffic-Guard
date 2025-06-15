@@ -1,5 +1,7 @@
 // src/AppRoutes.jsx
 // import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import RealTimeMonitoring from '../pages/admin/RealTimeMonitoring.jsx';
+import IncidentManagement from '../pages/admin/IncidentManagement.jsx';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute';
 
@@ -53,22 +55,22 @@ const AppRoutes = () => (
           </PrivateRoute>
         }
       /> */}
-      {/* <Route
+      <Route
         path="/admin/monitoring"
         element={
           <PrivateRoute requiredRole="admin">
             <RealTimeMonitoring />
           </PrivateRoute>
         }
-      /> */}
-      {/* <Route
+      /> 
+      <Route
         path="/admin/incidents"
         element={
           <PrivateRoute requiredRole="admin">
             <IncidentManagement />
           </PrivateRoute>
         }
-      /> */}
+      />
       {/* <Route
         path="/admin/prediction"
         element={

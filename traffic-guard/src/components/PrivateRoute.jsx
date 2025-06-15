@@ -7,20 +7,18 @@ export default function PrivateRoute({ children, requiredRole }) {
   const { user, loading } = useAuth();
   const location = useLocation();
 
-  // 1️⃣ While auth state is loading, render nothing (or a spinner)
+  // 🔍 Debug
+  console.log('🔒 PrivateRoute', {
+    path: location.pathname,
+    loading,
+    user,
+    requiredRole
+  });
+
   if (loading) return null;
-
-  // 2️⃣ If not logged in, redirect to login, preserving the intended path
-  if (!user) {
-    return <Navigate to="/login" state={{ from: location }} replace />;
-  }
-
-  // 3️⃣ If a role is required and user doesn’t match, redirect elsewhere
+  if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
   if (requiredRole && user.role !== requiredRole) {
-    // e.g. send to a “not authorized” page or home
     return <Navigate to="/" replace />;
   }
-
-  // 4️⃣ All good—render the protected component
   return children;
 }

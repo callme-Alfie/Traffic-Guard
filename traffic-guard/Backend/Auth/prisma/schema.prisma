@@ -21,8 +21,38 @@ model User {
   role      Role     @default(user)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  incidents Incident[]
 }
 enum Role {
   admin
   user
+}
+
+// prisma/schema.prisma
+model Incident {
+  id          Int       @id @default(autoincrement())
+  timestamp   DateTime  @default(now())
+  type        String
+  description String?
+  location    String
+  latitude    Float
+  longitude   Float
+  severity    Severity  @default(Low)
+  status      Status    @default(Active)
+  reportedBy  Int?      // FK to User.id
+  user        User?     @relation(fields: [reportedBy], references: [id])
+  updatedAt   DateTime  @updatedAt
+}
+
+enum Severity {
+  Low
+  Medium
+  High
+}
+
+enum Status {
+  Active
+  Acknowledged
+  Resolved
 }
