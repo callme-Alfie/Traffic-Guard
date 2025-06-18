@@ -1,31 +1,13 @@
-// src/pages/Login.jsx
-
-// export default function Login() {
-// + console.log('🏷️ Login component rendered');
-//   return (
-//     <div>…</div>
-//   );
-// }
-
-// console.log('🔑 Login rendered, user from context:', useAuth());
-
 import React, { useState } from 'react';
 import '../styles/login.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { useLocation } from 'react-router-dom';
-import { AuthProvider } from '../context/AuthContext';
-import { login, signup } from '../services/authServices.js';
-
-
-
-
-// const location = useLocation();
-// const from = location.state?.from?.pathname || (user.role === 'admin' ? '/admin/landing' : '/dashboard');
+import { login } from '../services/authServices.js';
 
 const Login = () => {
   const navigate = useNavigate();
   const { login } = useAuth();     // pull login action from context
+  const location = useLocation();  // to get the 'from' location (if available)
 
   const [form, setForm] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
@@ -40,12 +22,14 @@ const Login = () => {
 
     try {
       const user = await login(form);  // context handles token persistence
-      navigate(user.role === 'admin' ? '/admin/landing' : '/dashboard');
+
+      // Redirect after login
+      const from = location.state?.from?.pathname || (user.role === 'admin' ? '/admin/landing' : '/dashboard');
       navigate(from, { replace: true });
+
     } catch (err) {
       setError(err.response?.data?.msg || 'Login failed');
     }
-    
   };
 
   return (

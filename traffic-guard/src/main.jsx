@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
     <AuthProvider>
       <App /> 
-                                // this must be your router container
+                                
     </AuthProvider>
     </BrowserRouter> 
     

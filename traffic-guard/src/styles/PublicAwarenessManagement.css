@@ -1,0 +1,48 @@
+/* src/pages/admin/PublicAwarenessManagement.css */
+
+.public-awareness-page {
+  padding: 2rem;
+}
+
+.header h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.header p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+.tabs {
+  margin: 1.5rem 0;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.tab-btn {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  border-bottom: 2px solid transparent;
+  transition: 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: #1b3b1a;
+}
+
+.tab-btn.active {
+  font-weight: 600;
+  color: #1b3b1a;
+  border-bottom: 2px solid #1b3b1a;
+}
+
+.tab-content {
+  margin-top: 1.5rem;
+}

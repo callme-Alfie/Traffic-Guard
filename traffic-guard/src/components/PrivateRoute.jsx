@@ -3,7 +3,7 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext.jsx';
 
-export default function PrivateRoute({ children, requiredRole }) {
+export default function PrivateRoute({ children, allowedRoles }) {
   const { user, loading } = useAuth();
   const location = useLocation();
 
@@ -12,12 +12,12 @@ export default function PrivateRoute({ children, requiredRole }) {
     path: location.pathname,
     loading,
     user,
-    requiredRole
+    allowedRoles
   });
 
   if (loading) return null;
   if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
-  if (requiredRole && user.role !== requiredRole) {
+  if (allowedRoles && !allowedRoles.includes(user.role)) {
     return <Navigate to="/" replace />;
   }
   return children;

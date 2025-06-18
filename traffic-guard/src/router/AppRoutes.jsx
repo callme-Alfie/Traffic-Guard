@@ -4,12 +4,17 @@ import RealTimeMonitoring from '../pages/admin/RealTimeMonitoring.jsx';
 import IncidentManagement from '../pages/admin/IncidentManagement.jsx';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import PrivateRoute from '../components/PrivateRoute';
+import AccidentPrediction from '../pages/admin/AccidentPrediction.jsx';
+import Layout from '../components/layout/Layout';
+import ReportsAndAnalytics from '../pages/admin/ReportsAndAnalytics.jsx';
+import PublicAwarenessManagement from '../pages/admin/PublicAwarenessManagement.jsx';
 
 import Landing from '../pages/Landing';
 import SignUp from '../pages/SignUp';
 import Login from '../pages/Login.Jsx';
-import Sidebar from '../components/Sidebar';
+// import Sidebar from '../components/Sidebar';
 import Dashboard from '../pages/Dashboard';
+import PublicDashboard from '../pages/PublicDashboard.jsx';
 
 
 // Admin pages
@@ -39,7 +44,7 @@ const AppRoutes = () => (
       <Route
         path="/dashboard"
         element={
-          <PrivateRoute requiredRole="user">
+           <PrivateRoute allowedRoles={['user', 'admin']}>
             <Dashboard />
           </PrivateRoute>
         }
@@ -71,14 +76,14 @@ const AppRoutes = () => (
           </PrivateRoute>
         }
       />
-      {/* <Route
+       <Route
         path="/admin/prediction"
         element={
           <PrivateRoute requiredRole="admin">
             <AccidentPrediction />
           </PrivateRoute>
         }
-      /> */}
+      /> 
       {/* <Route
         path="/admin/policies"
         element={
@@ -87,14 +92,14 @@ const AppRoutes = () => (
           </PrivateRoute>
         }
       /> */}
-      {/* <Route
+      <Route
         path="/admin/awareness"
         element={
           <PrivateRoute requiredRole="admin">
             <PublicAwarenessManagement />
           </PrivateRoute>
         }
-      /> */}
+      />
       {/* <Route
         path="/admin/upload"
         element={
@@ -111,32 +116,33 @@ const AppRoutes = () => (
           </PrivateRoute>
         }
       /> */}
-      {/* <Route
+      <Route
         path="/admin/reports"
         element={
           <PrivateRoute requiredRole="admin">
-            <ReportsAnalytics />
+            <ReportsAndAnalytics />
           </PrivateRoute>
         }
-      /> */}
+      />
 
       {/* User-only routes */}
-      {/* <Route
-        path="/dashboard"
+       <Route
+        path="/userdashboard"
         element={
           <PrivateRoute requiredRole="user">
             <PublicDashboard />
           </PrivateRoute>
         }
       />
-      <Route
+      
+      {/* <Route
         path="/report-incident"
         element={
           <PrivateRoute requiredRole="user">
             <IncidentReporting />
           </PrivateRoute>
         }
-      /> */}
+      />  */}
 
       {/* Catch-all */}
       <Route path="*" element={<Navigate to="/login" replace />} />

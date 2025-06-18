@@ -1,10 +1,12 @@
 import React from 'react'
-import Sidebar from '../components/Sidebar'
+
+import Layout from '../components/layout/Layout'
 
 const Dashboard = () => {
   return (
     <div>
-      <Sidebar />
+      
+      <Layout />
     </div>
   )
 }

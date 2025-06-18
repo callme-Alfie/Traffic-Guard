@@ -1,0 +1,152 @@
+.public-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.welcome h1 {
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.sub {
+  color: #666;
+  margin-top: 0.3rem;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.alert-card {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  background: #fef8f8;
+  border: 1px solid #f5c2c2;
+}
+
+.icon-box {
+  background: #f5e6e6;
+  padding: 0.5rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-box.small {
+  padding: 0.3rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.zone-list {
+  margin-top: 1rem;
+}
+
+.zone-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.icon {
+  margin-right: 0.5rem;
+}
+
+.badge {
+  padding: 0.2rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.badge.danger {
+  background: #dc3545;
+}
+
+.badge.warning {
+  background: #f0ad4e;
+}
+
+.weather-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.icon-circle {
+  background: #eee;
+  padding: 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-status {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.tip-box {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.alert-list {
+  margin-top: 1rem;
+}
+
+.alert-item {
+  display: flex;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.alert-item:last-child {
+  border-bottom: none;
+}
+
+.alert-title {
+  font-weight: 500;
+}
+
+.alert-meta {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 0.25rem;
+}
+
+.dot {
+  font-weight: bold;
+}
+
+.link-btn {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #1b3b1a;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  font-weight: 500;
+}
